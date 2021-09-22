@@ -1,0 +1,69 @@
+/* Inicio */
+
+    .div-welcome {
+        background-color: wheat;
+        color: black;
+        z-index: -1;
+    }
+
+    .change-text {
+        display: inline-block;
+        display: none;
+    }
+
+    .text-in{
+        display: inline-block;
+        animation: textIn 0.5s ease;
+    }
+    .text-out{
+        animation: textOut 0.5s ease;
+    }
+    @keyframes textIn{
+        0%{
+            transform: translateY(100%);
+        }
+        100%{
+            transform: translateY(0%);
+        }
+    }
+    @keyframes textOut{
+        0%{
+            transform: translateY(0%);
+        }
+        100%{
+            transform: translateY(-100%);
+
+        }
+    }
+
+/* General Content */
+    .content {
+        margin-top: calc(100vh - var(--navbar-height));
+    }
+
+/* Navbar */
+    :root {
+        --navbar-height: 4rem
+    }
+    .navbar {
+        height: var(--navbar-height);
+        z-index: 10000;
+    }
+
+    .card-inf div{
+        height: 100%;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+
+    .col-img-inf {
+        color: #F4D06C;
+    }
+
+    .col-img-inf svg{
+        height: 100%;
+    }
+
+    .cursos {
+        background-color: #F4D06C;
+    }

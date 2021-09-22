@@ -1,0 +1,11 @@
+Pero de estructura básica queremos que 
+
+-La pagina frontal sea basicamente una infografia, que mientras scrollean para abajo demos toda la infomrmación necesaria de manera limpia y visual (checa las paginas de ejemplo que te pasé). Pequeño resumen de nosotros, contacto, temarios, edades aptas, opiniones, horarios, en que les ayudara, etc. Que mientras bajen se contesten todas las dudas frecuentes
+
+-la pagina frontal tenga el contacto visible para llamar/enviar mensaje a whats/msn
+
+-Pestaña de contacto
+
+-Pestaña de FAQs
+
+-Alguna implementacion para hacer pagos de los cursos con tarjeta de credito/debito/paypal/oxxo
