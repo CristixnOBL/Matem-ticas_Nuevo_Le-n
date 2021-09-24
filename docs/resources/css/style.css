@@ -75,3 +75,26 @@
         color: #F4D06C;
         border-color: #F4D06C;
     }
+
+    .card-precios {
+        border: none;
+        transition: 0.5s;
+        height: 100%;
+    }
+
+    .card-precios:hover {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+        transform: scale(1.1);
+    }
+
+    .card-head {
+        background-color: #F4D06C;
+    }
+
+    .card-head svg {
+        max-height: 50px;
+    }
+
+    .footer {
+        background-color: #736B55;
+    }
