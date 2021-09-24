@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -85,7 +86,7 @@
             </div>
 
         <!--inf-->
-        <div class="text-inf container py-5">
+        <div class="text-inf container py-3">
             <p class="fs-1 fw-bold text-center p-5">¿Por qué desarrollar su pensamiento matemático?</p>
             <div class="row h-100">
                 <div class="col-lg-7 p-5">
@@ -126,39 +127,50 @@
         </div>
 
         <!--Cursos-->
-        <div class="container py-5">
+        <div class="container py-3">
             <p class="text-center fw-bold fs-1">Cursos</p>
             <div class="row">
                 <div class="col-lg py-2">
-                    <div class="card shadow bg-light">
+                    <div class="card shadow bg-light h-100">
                         <img src="resources/img/razonamiento.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Razonamiento Matemático</h5>
-                            <p class="card-text">Descripción.</p>
-                            <a href="#" class="btn btn-primary">Leer más</a>
+                            <p class="card-text fw-light">Aprenderán a PENSAR y RAZONAR con problemas que fomentan su creatividad e ingenio. Desarrollarán su comprensión lectora, concentración, comunicación, lógica, trabajo en equipo, demostración de problemas, estrategias para exámenes y mucho más.</p>
+                            <a href="#" class="btn btn-primary btn-per">Leer más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg py-2">
-                    <div class="card shadow bg-light">
+                    <div class="card shadow bg-light h-100">
                         <img src="resources/img/ajedrez.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Ajedrez</h5>
-                            <p class="card-text">Descripción.</p>
-                            <a href="#" class="btn btn-primary">Leer más</a>
+                            <p class="card-text fw-light">Aprenderán a jugar ajedrez de manera didáctica y divertida. Desarrollarán su pensamiento crítico, toma de decisions, análisis especial y resolución de problemas complejos.</p>
+                            <a href="#" class="btn btn-primary btn-per">Leer más</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg py-2">
-                    <div class="card shadow bg-light">
-                        <img src="resources/img/ingenio.jpg" class="card-img-top" alt="...">
+                    <div class="card shadow bg-light h-100">
+                        <img src="resources/img/asesorias.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Asesoría privada</h5>
-                            <p class="card-text">Descripción.</p>
-                            <a href="#" class="btn btn-primary">Leer más</a>
+                            <p class="card-text fw-light">Ofrecemos asesorías privadas uno a uno para repasos de temas escolares, tareas o exámenes. Nuestros maestros capacitados les ayudarán en cualquier tema desde primaria hasta universidad.</p>
+                            <a href="#" class="btn btn-primary btn-per">Leer más</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!--Cursos-->
+        <div class="container p-3">
+            <p class="text-center">
+                <button class="btn btn-per fw-bold fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Calendario Agosto-Diciembre 2021
+                </button>
+            </p>
+            <div class="collapse Cursos-collapse" id="collapseExample">
             </div>
         </div>
 
@@ -193,6 +205,33 @@
             },textInTimer);
         }
         window.onload=animateText;
+    </script>
+    <script>
+        const table_cursos = document.querySelector(".Cursos-collapse")
+        $.ajax({
+            type: "GET",
+            url: "calendario.csv",
+            dataType: "text",
+            success: function(data) {successFunction(data);}
+        });
+
+        function successFunction(data) {
+            var allRows = data.split("\n");
+            console.log(allRows)
+            var table = '<table class="table table-striped"><thead><tr><th scope="col">Fecha</th><th scope="col">Taller</th></tr></thead><tbody>';
+            for (var singleRow = 0; singleRow < allRows.length - 1; singleRow++) {
+                table += '<tr>';
+                var rowCells = allRows[singleRow].split(',');
+                for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+                    table += '<td>';
+                    table += rowCells[rowCell];
+                    table += '</td>';
+                }
+                table += '</tr>';
+            }
+            table += '</tbody></table>';
+            table_cursos.innerHTML = table
+        }
     </script>
 </body>
 </html>

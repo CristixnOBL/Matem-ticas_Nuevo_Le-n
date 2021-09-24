@@ -63,3 +63,15 @@
     .col-img-inf svg{
         height: 100%;
     }
+
+    .btn-per {
+        background-color: #F4D06C;
+        color: white;
+        border-color: #F4D06C;
+    }
+
+    .btn-per:hover {
+        background-color: transparent;
+        color: #F4D06C;
+        border-color: #F4D06C;
+    }
