@@ -70,19 +70,28 @@
         </nav>
 
         <!--Banner-->
-            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active w-100" style="background-color:#736B55;">
-                        <div class="container">
-                            <div class="text-slide1 text-white text-center py-5">
-                                <p class="fs-1 fw-bold">Talleres de Razonamiento Matemático</p>
-                                <p class="fs-4">Nuestro modelo está basado en las olimpiadas nacionales de matemáticas. Les enseñamos a pensar y resolver problemas de manera creativa.</p>
-                                <p class="fs-3 fw-bold">Inscripciones abiertas</p>
-                                <p class="fs-3 fw-bold">Agenda una clase gratis</p>
-                            </div>
+            <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner bg-dark">
+                    <div class="carousel-item active d-flex justify-content-center">
+                        <div class="div-banner" style="max-width: 1320px;">
+                            <img src="resources\img\banner1.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="carousel-item d-flex justify-content-center">
+                        <div class="div-banner" style="max-width: 1320px;">
+                            <img src="resources\img\banner2.jpg" class="img-fluid">
                         </div>
                     </div>
                 </div>
+                <!--Buttons-->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
 
         <!--inf-->
@@ -350,6 +359,12 @@
             table += '</tbody></table>';
             table_cursos.innerHTML = table
         }
+    </script>
+    <script>
+        var myCarousel = document.querySelector('#myCarousel')
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 2000
+        })
     </script>
 </body>
 </html>

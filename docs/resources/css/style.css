@@ -64,6 +64,7 @@
 
     .col-img-inf {
         color: #F4D06C;
+        min-height: 300px;
     }
 
     .col-img-inf svg{

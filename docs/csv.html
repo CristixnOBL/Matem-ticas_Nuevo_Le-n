@@ -9,30 +9,27 @@
 </head>
 <body>
     <script>
-        $.ajax({
-            url: 'calendario.csv',
-            dataType: 'text',
-        }).done(successFunction);
+        const mysql = require('mysql2');
 
-        function successFunction(data) {
-            var allRows = data.split("\n");
-            console.log(allRows)
-            var table = '<table>';
-                table += '<tbody>';
-            for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-                table += '<tr>';
-                var rowCells = allRows[singleRow].split(',');
-                for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-                    table += '<td>';
-                    table += rowCells[rowCell];
-                    table += '</td>';
-                }
-                table += '</tr>';
-            }
-            table += '</tbody>';
-            table += '</table>';
-            $('body').append(table);
+        const connection = mysql.createPool({
+            host: "localhost",
+            user: "root",
+            password: "cristianolb20",
+            database: "db_algebra"
+            // here you can set connection limits and so on
+        });
+
+        module.exports = connection;
+
+        //put these on destination page
+        const conection = require('../util/connection');
+
+        async function getAll() {
+            const sql = "SELECT * FROM talleres";
+            const [rows] = await conection.promise().query(sql);
+            return rows;
         }
+        exports.getAll = getAll;
     </script>
 </body>
 </html>
