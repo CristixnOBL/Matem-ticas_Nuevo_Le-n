@@ -71,15 +71,15 @@
 
         <!--Banner-->
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                <div class="carousel-inner bg-dark">
+                <div class="carousel-inner">
                     <div class="carousel-item active d-flex justify-content-center">
-                        <div class="div-banner" style="max-width: 1320px;">
-                            <img src="resources\img\banner1.jpg" class="img-fluid">
+                        <div class="div-banner">
+                            <img id="img_b1" src="resources\img\banner1-xl.jpg" class="img-fluid">
                         </div>
                     </div>
                     <div class="carousel-item d-flex justify-content-center">
-                        <div class="div-banner" style="max-width: 1320px;">
-                            <img src="resources\img\banner2.jpg" class="img-fluid">
+                        <div class="div-banner">
+                            <img id="img_b2" src="resources\img\banner2-xl.jpg" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -365,6 +365,22 @@
         var carousel = new bootstrap.Carousel(myCarousel, {
             interval: 2000
         })
+    </script>
+    <script>
+        // image depending of screen size
+
+        function reportWindowSize() {
+            if(window.innerWidth>1000){
+                $("#img_b1").attr("src", "resources/img/banner1-xl.jpg");
+                $("#img_b2").attr("src", "resources/img/banner2-xl.jpg");
+            }
+            else{
+                $("#img_b1").attr("src", "resources/img/banner1.jpg");
+                $("#img_b2").attr("src", "resources/img/banner2.jpg");
+            }
+        }
+        reportWindowSize();
+        window.onresize = reportWindowSize;
     </script>
 </body>
 </html>
